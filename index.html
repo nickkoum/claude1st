@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project 5170</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__logo" href="#">Project<span>5170</span></a>
+      <ul class="nav__links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn--sm" href="#contact">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="badge">Introducing Project 5170</span>
+      <h1 class="hero__headline">
+        Build something<br /><span class="gradient-text">remarkable.</span>
+      </h1>
+      <p class="hero__sub">
+        A modern solution designed to accelerate your workflow, simplify
+        complexity, and help your team ship faster than ever before.
+      </p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#contact">Get Early Access</a>
+        <a class="btn btn--ghost" href="#features">See How It Works</a>
+      </div>
+    </div>
+    <div class="hero__glow"></div>
+  </section>
+
+  <!-- Features -->
+  <section class="features section" id="features">
+    <div class="container">
+      <h2 class="section__title">Everything you need</h2>
+      <p class="section__sub">
+        Purpose-built features that work together seamlessly.
+      </p>
+      <div class="features__grid">
+        <div class="card">
+          <div class="card__icon">&#9889;</div>
+          <h3>Lightning Fast</h3>
+          <p>Optimised from the ground up so your team never waits. Real-time feedback at every step.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">&#128274;</div>
+          <h3>Secure by Default</h3>
+          <p>Enterprise-grade security baked in — not bolted on. Your data stays yours, always.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">&#128200;</div>
+          <h3>Insightful Analytics</h3>
+          <p>Clear dashboards and actionable metrics so you always know what matters most.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">&#128101;</div>
+          <h3>Team-First</h3>
+          <p>Built for collaboration. Invite your team, assign roles, and stay in sync effortlessly.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">&#128279;</div>
+          <h3>Integrations</h3>
+          <p>Connect the tools you already love. Open APIs and webhooks make integration painless.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">&#127775;</div>
+          <h3>Always Improving</h3>
+          <p>Continuous updates driven by user feedback. Your feature requests shape the roadmap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats / About -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about__inner">
+        <div class="about__copy">
+          <h2>Why Project 5170?</h2>
+          <p>
+            We started this project because existing tools were either too
+            complex, too slow, or too expensive. Project 5170 is different — it
+            strips away everything unnecessary and delivers exactly what your
+            team needs to move fast and build well.
+          </p>
+          <p>
+            Whether you're a solo developer or a growing organisation, we scale
+            with you from day one.
+          </p>
+          <a class="btn btn--primary" href="#contact">Join the waitlist</a>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <span class="stat__num" data-target="10">0</span><span class="stat__unit">x</span>
+            <p>Faster delivery</p>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-target="99">0</span><span class="stat__unit">%</span>
+            <p>Uptime SLA</p>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-target="5000">0</span><span class="stat__unit">+</span>
+            <p>Teams onboarded</p>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-target="24">0</span><span class="stat__unit">/7</span>
+            <p>Support coverage</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / CTA -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Ready to get started?</h2>
+        <p>Join thousands of teams already using Project 5170.</p>
+        <form class="cta-form" id="cta-form">
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            required
+            aria-label="Email address"
+          />
+          <button class="btn btn--primary" type="submit">Request Access</button>
+        </form>
+        <p class="cta-form__note" id="form-msg" hidden>
+          Thanks! We'll be in touch soon.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <span class="nav__logo">Project<span>5170</span></span>
+      <p>&copy; 2026 Project 5170. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
