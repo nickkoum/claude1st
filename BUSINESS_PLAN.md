@@ -252,11 +252,251 @@ If you want less competition, consider these under-served Greek niches:
 - **Revenue model:** €199-€399/mo (high pain, big ROI from one extra deal)
 - **GHL built for this** — pipeline, follow-up sequences, automated valuations
 
-### Option D: Beauty Salons & Barbershops
+### Option D: Beauty Salons & Barbershops *(see full expansion below)*
 - **Pain:** Phone bookings, no reminders, massive no-shows, no loyalty
-- **~30,000+ salons/barbershops in Greece**
-- **Revenue model:** €49-€99/mo (high volume, lower price point)
+- **~869 registered salons in Greece** (Attica/Athens = 501), 88% solo owners
+- **Revenue model:** €49-€99/mo (high volume, very low price resistance)
 - **Very viral** — clients share booking links with friends
+
+---
+
+## 12. DEEP DIVE — Beauty Salons & Barbershops Vertical
+
+### 12.1 Why Beauty Salons Are the Fastest Path to 100 Clients
+
+| Factor | Detail |
+|---|---|
+| **Market size** | 869 registered salons in Greece; Attica alone has 501. Barbershops, nail studios, and aesthetics clinics add thousands more |
+| **Fragmentation** | 88% are solo/independent — no IT department, no developer, no agency. They will pay for simple and done-for-you |
+| **Decision speed** | The owner IS the decision maker. No procurement, no committee, no budget approval |
+| **Pain is daily** | Every no-show is immediate lost money. Pain is visible and quantifiable |
+| **WhatsApp culture** | Greek salon clients already message their stylist on WhatsApp — automation meets them where they are |
+| **Seasonality** | Year-round business (unlike restaurants which dip in winter) |
+| **Referral culture** | Women especially share good salon finds with friends — viral by nature |
+
+---
+
+### 12.2 The Competitor Landscape — and Why They Leave the Door Open
+
+| Competitor | Model | Fatal Weakness for Greek Market |
+|---|---|---|
+| **Fresha** | Free booking + % cut on new clients | Takes commission on every new client they send — owners hate giving away revenue. Only ~80 Athens salons listed despite being "free" |
+| **Vagaro** | $30-90/mo SaaS, US-focused | No Greek language, no local support, no WhatsApp integration, US-centric UX |
+| **Boulevard** | $175+/mo, upscale salons | Too expensive, too complex, English only, not known in Greece |
+| **GlossGenius** | Mobile-first, US-only | Not available in Greece |
+| **Treatwell** | Commission marketplace | Takes 20-30% per booking, salon owners resentful, no automation tools |
+| **Paper/phone** | Free | Still dominant — this is your actual competitor |
+
+**The key insight:** Fresha is the only real digital competitor present in Athens, and they've only signed up ~80 salons despite being free. That means **420+ Attica salons are still on paper and phone**. This is your low-hanging fruit.
+
+**Fresha's fatal flaw:** They make money by sending salons new clients — and taking a cut. Your model gives salons tools to retain and grow their *existing* clients. These are not competing products; you actually complement each other while offering far more value.
+
+---
+
+### 12.3 The Platform Concept — "Korifí" (Κορυφή) or "Ομορφιά Pro"
+
+Build a Greek beauty booking + client retention platform. Working name: **Stilist.gr** ("στιλίστ" = stylist) or **Randez.gr** (from "rendez-vous").
+
+**Two sides:**
+
+**Consumer side (the viral engine):**
+- Search and book hair/nail/beauty/barber appointments in your city
+- See real photos, services, prices, availability
+- Book in 30 seconds without calling
+- Get SMS confirmation and reminder
+
+**Business side (the paid product):**
+- GHL-powered sub-account, white-labeled as your platform
+- All the automations pre-built and ready on day one
+
+---
+
+### 12.4 The Pain-to-Feature Map
+
+Every feature solves a specific, daily, painful problem:
+
+| Daily Pain | How You Solve It | GHL Feature |
+|---|---|---|
+| Phone rings while cutting hair — can't answer | Missed call → auto SMS: "Hi! Book online: [link]" | Missed Call Text-Back |
+| Client doesn't show up — slot wasted | SMS 24hr + 2hr before appointment | Appointment Reminders |
+| Stylist forgets client's hair color formula | Client notes stored in CRM | Contact Custom Fields |
+| No Google reviews despite happy clients | Auto SMS after visit: "Leave us a star ⭐" | Review Request Automation |
+| "When are you free?" on WhatsApp all day | WhatsApp bot shows availability + booking link | WhatsApp Automation |
+| Old clients stop coming | SMS after 45 days: "We miss you! Book now -10%" | Re-engagement Campaign |
+| Birthday outreach is manual or forgotten | Auto SMS on birthday: "Happy birthday — gift inside 🎁" | Birthday Automation |
+| No idea which services/clients are most profitable | Dashboard with revenue by service and stylist | GHL Reporting |
+| Clients ask for loyalty cards | Digital loyalty tracked automatically | Custom Workflow |
+
+---
+
+### 12.5 Pricing Structure
+
+**Free Tier (directory only — the hook)**
+- Listed on Stilist.gr consumer directory
+- Basic profile: photos, services, location, hours
+- Booking button (manual confirmation by salon)
+- 0 automations
+
+**Pro Tier — €69/month**
+Target: solo stylists, small salons (1-2 chairs)
+- Everything in Free
+- Automated booking (no manual confirmation)
+- SMS reminders (no-show reduction)
+- Missed call text-back
+- Review request automation
+- WhatsApp FAQ bot (hours, location, booking link)
+- Up to 500 SMS/month included
+
+**Studio Tier — €129/month**
+Target: salons with 3+ staff, barbershops, nail studios
+- Everything in Pro
+- Multi-staff calendar management
+- Birthday + re-engagement campaigns
+- Loyalty program workflow
+- Monthly SMS newsletter to client list
+- Up to 2,000 SMS/month included
+- Priority Greek-language support
+
+**Your economics at scale:**
+
+| Clients | Avg Revenue | MRR | GHL Cost | Net MRR |
+|---|---|---|---|---|
+| 20 | €89 | €1,780 | €460 | €1,320 |
+| 50 | €89 | €4,450 | €460 | €3,990 |
+| 100 | €89 | €8,900 | €460 | €8,440 |
+| 200 | €89 | €17,800 | €800 | €17,000 |
+
+*GHL cost stays near-flat because Unlimited plan covers all sub-accounts.*
+
+---
+
+### 12.6 The Viral Mechanics for Beauty Salons
+
+Beauty salons are uniquely viral because of how their clients behave:
+
+**Mechanic 1 — The Booking Link**
+Every salon gets a link like `stilist.gr/maria-koyfidou-hair`. They put this in their Instagram bio instead of "DM to book." Every client who clicks lands on your platform.
+
+**Mechanic 2 — The Booking Confirmation Page**
+After a client books, they see: *"Share your appointment with a friend and you both get 10% off your next visit."* One tap → WhatsApp share → new user.
+
+**Mechanic 3 — The Stylist as Influencer**
+Greek stylists are already social media savvy. When their booking page looks beautiful and professional, they *want* to share it. "Book with me on Stilist.gr" becomes a status statement.
+
+**Mechanic 4 — Reviews Drive Discovery**
+Your automated review request gets salons 3-5x more Google reviews within 60 days. More reviews = higher Google ranking = more organic discovery of your platform.
+
+**Mechanic 5 — WhatsApp Sharing**
+The most powerful channel in Greece. A woman books a great nail appointment → screenshots the booking confirmation → shares in her WhatsApp group → 3 friends ask "how did you book?" → they find your platform.
+
+---
+
+### 12.7 Go-To-Market for the Beauty Vertical
+
+**Week 1-2: Build your demo**
+- Set up one demo GHL sub-account for a fictional Athens hair salon ("Κομμωτήριο Μαρία")
+- Record a 90-second Loom/video in Greek showing: booking, reminder, review request, WhatsApp reply
+- Create a simple landing page: "Πάρε δωρεάν κράτηση online για το κομμωτήριό σου"
+
+**Week 3-4: Instagram outreach (your primary channel)**
+Salons are highly active on Instagram. Manual DM strategy:
+
+> *"Γεια σου! Είδα το κομμωτήριό σου και μου άρεσε πολύ. Φτιάξαμε ένα δωρεάν σύστημα online κρατήσεων για κομμωτήρια στην Αθήνα — θέλεις να δεις πώς λειτουργεί;"*
+> ("Hi! Saw your salon and loved it. We built a free online booking system for Athens salons — want to see how it works?")
+
+Target: 20 DMs/day = 140/week. Expect 10-15% reply rate = 14-21 conversations/week.
+
+**Month 2: Facebook Groups**
+Join and participate genuinely in:
+- `Κομμωτές Αθήνας` (Stylists of Athens)
+- `Barbers Greece`
+- `Nail Artists Greece`
+- `Αισθητικοί Ελλάδος`
+
+Post real value (tips, tools) before pitching. After trust is built, share your platform.
+
+**Month 2-3: The "Claim Your Profile" tactic**
+Pre-build 50 profiles using Google Maps data (name, address, phone, hours). Email/DM each salon:
+> *"Δημιουργήσαμε ένα προφίλ για το κομμωτήριό σου στο Stilist.gr — θέλεις να το διεκδικήσεις δωρεάν;"*
+
+This is low-friction because they don't have to do anything — just claim what's already theirs.
+
+**Month 3: First paid conversions**
+Call every free-tier salon that received 5+ bookings. Show them the data. Pitch:
+> *"Πέρυσι έχασες 8 ραντεβού λόγω no-shows. Με τις αυτόματες υπενθυμίσεις, αυτό μειώνεται κατά 30%. Για €69 το μήνα, σου γλιτώνω €200+ σε χαμένα ραντεβού."*
+
+---
+
+### 12.8 Barbershops as a Sub-Niche
+
+Barbershops deserve special mention because they behave differently from hair salons:
+
+- **Clientele is 90% male** — booking behavior is more impulsive, WhatsApp is preferred
+- **Higher frequency** — clients come every 2-3 weeks (vs monthly for women's salons) = more touchpoints
+- **Loyalty is fierce** — men rarely switch barbers → a loyalty program is extremely sticky
+- **Instagram/TikTok heavy** — barbers are among the most engaged SMEs on social media
+- **Revenue per visit is lower** (€10-15) but frequency is higher → loyalty automation has massive ROI
+
+Specific automation for barbershops:
+```
+"It's been 18 days since your last cut — time to book? [link]"
+"New barber joined us this week — book your first cut at 50% off [link]"
+"Your loyalty card: 9 cuts done, 1 more for a FREE cut! [link]"
+```
+
+---
+
+### 12.9 Beauty Salon Snapshot — What You Build Once in GHL
+
+Create a master GHL snapshot (template) that you clone for every new salon. Build it once, deploy in 30 minutes per client.
+
+```
+SNAPSHOT CONTENTS:
+
+Pipelines:
+  └── New Lead Pipeline
+       ├── Booked
+       ├── Appointment Confirmed
+       ├── Completed Visit
+       └── Re-engagement
+
+Automations:
+  ├── Booking Confirmation → SMS + Email immediately
+  ├── 24hr Reminder → SMS: "Υπενθύμιση: ραντεβού αύριο στις [time]"
+  ├── 2hr Reminder → SMS: "Σε βλέπουμε σε 2 ώρες! [address]"
+  ├── No-Show → SMS: "Σε χάσαμε! Κλείσε νέο ραντεβού: [link]"
+  ├── Post-Visit (1hr after) → SMS: "Πώς σου φάνηκε; Άφησέ μας αξιολόγηση: [Google link]"
+  ├── Re-engagement (45 days) → SMS: "Δεν σε έχουμε δει λίγο καιρό! -10% αυτή την εβδομάδα"
+  ├── Birthday → SMS: "Χρόνια πολλά! Δώρο: δωρεάν [service] με την επόμενη επίσκεψή σου 🎂"
+  └── Missed Call → Immediate SMS: "Είδαμε ότι τηλεφώνησες! Κλείσε ραντεβού εδώ: [link]"
+
+Custom Fields (per client):
+  ├── Hair color formula / service notes
+  ├── Preferred stylist
+  ├── Last visit date
+  └── Total visits (loyalty counter)
+
+WhatsApp Bot Replies:
+  ├── "ωράριο" / "τι ώρα" → sends opening hours
+  ├── "κράτηση" / "ραντεβού" → sends booking link
+  ├── "τιμές" → sends price list link
+  └── "που είστε" → sends Google Maps link
+```
+
+---
+
+### 12.10 Beauty Salon — 90-Day Milestone Plan
+
+| Week | Target | Action |
+|---|---|---|
+| 1-2 | Build demo | GHL snapshot ready, landing page live |
+| 3-4 | 10 free sign-ups | Instagram DMs, claim-your-profile campaign |
+| 5-6 | 25 free sign-ups | Facebook group presence, referrals from first 10 |
+| 7-8 | 50 free sign-ups | Press outreach (Beautyfull.gr, Glam.gr) |
+| 9-10 | First 5 paid | Call top-performing free accounts with data |
+| 11-12 | 10 paid clients | Testimonials → social proof → more conversions |
+| Month 4 | 25 paid clients | €1,725-€3,225 MRR — break even on GHL cost |
+| Month 6 | 50 paid clients | €3,450-€6,450 MRR — sustainable business |
 
 ---
 
