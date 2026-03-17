@@ -831,6 +831,570 @@ And no competitor does this. Viator doesn't re-engage past tourists on behalf of
 
 ---
 
+---
+
+## 14. FULL FROM-SCRATCH BUSINESS PLAN — Athens Tour Operator SaaS
+
+> This section is a standalone, actionable plan. Everything you need to go from zero to paying clients without writing code and without taking commissions.
+
+---
+
+### 14.1 The Business in One Sentence
+
+You sell a flat-fee monthly SaaS product (powered by white-label GHL) that gives small Athens tour operators and airport transfer companies a direct booking engine, automated client communication, and review growth tools — so they stop depending on Viator and keep 100% of their revenue.
+
+---
+
+### 14.2 Why Flat Fee Beats Commission — The Core Argument
+
+Every competitor in this space either charges commission or hides fees as a percentage of bookings. You charge a flat monthly fee. This is not just a pricing decision — it is your entire sales pitch.
+
+**The math that sells itself:**
+
+| Platform | Model | Cost on €5,000/mo bookings | Cost on €15,000/mo bookings |
+|---|---|---|---|
+| Viator / GYG | 25% commission | €1,250 | €3,750 |
+| FareHarbor | "Free" + 6% direct booking fee | €300 | €900 |
+| Checkfront | $99/mo + 3% booking fee | €249 | €549 |
+| Bokun | 1.5% booking fee | €75 | €225 |
+| **Your platform** | **€149/mo flat** | **€149** | **€149** |
+
+At €5,000/month in bookings, you are 2x cheaper than Bokun, 2x cheaper than Checkfront, and 8x cheaper than Viator.
+
+At €15,000/month — a realistic peak-season figure for a busy operator — you save them **€3,600/month** compared to staying 100% on Viator.
+
+**Your sales pitch is arithmetic, not persuasion.** You open a calculator in front of them and show them the number. That is the entire close.
+
+---
+
+### 14.3 The Commission Model — Why You Must Never Use It
+
+This is worth being explicit about, because the temptation will arise:
+
+- Commission feels low-risk at the start ("I only earn when they earn")
+- But it misaligns incentives: you benefit most when they grow, so there is pressure to oversell
+- It caps your margin: a client doing €50,000/season at 5% = €2,500 for you. At €149/mo flat = €894/season. But with 10 clients on flat fee you earn €8,940 with zero transaction tracking complexity
+- It creates resentment: operators who succeed start resenting the cut you take
+- It requires transaction infrastructure, dispute handling, and reconciliation
+- Every commission-based platform eventually faces operator revolt — see Treatwell, Viator supplier forums, and GetTransfer driver complaints
+
+**Flat fee SaaS is simpler, cleaner, and builds a more defensible business.** The client knows exactly what they pay. You know exactly what you earn. No surprises.
+
+---
+
+### 14.4 The MVP — What You Actually Build
+
+The MVP has three components. All three are built inside GHL. No custom code required.
+
+#### Component 1: The Direct Booking Page
+A standalone, mobile-optimized booking page hosted on your white-label GHL domain.
+
+Example URL: `greecedirect.gr/athens-acropolis-tour-george`
+
+The page shows:
+- Tour/service name, description, photos
+- Available dates and times (GHL calendar)
+- Price per person / per vehicle
+- "Book Now" button → name, email, WhatsApp number, group size → payment (Stripe)
+- Confirmation page with all logistics
+
+The operator shares this link everywhere: Instagram bio, Google My Business, email signature, WhatsApp status, their website if they have one.
+
+**For operators with an existing website:** You give them a copy-paste embed code (GHL inline calendar widget) that adds booking directly to their current site.
+
+#### Component 2: The Automation Sequence
+Pre-built workflows in GHL that fire automatically after every booking. Built once in your master snapshot, cloned per client.
+
+```
+BOOKING CONFIRMED (immediate)
+→ WhatsApp to tourist: confirmation, meeting point, guide contact
+
+24 HOURS BEFORE
+→ WhatsApp to tourist: reminder, what to bring, weather link
+
+2 HOURS BEFORE (transfers only)
+→ WhatsApp: driver name, vehicle plate, photo, live tracking link
+
+3 HOURS AFTER TOUR
+→ WhatsApp to tourist: review request (Google + TripAdvisor links)
+
+SAME EVENING (transfer clients only)
+→ WhatsApp: "Enjoying Athens? Book a tour with us — 10% off for transfer guests"
+
+30 DAYS AFTER (if no second booking)
+→ Email: "Hope you loved Athens — if you're recommending us to anyone, here's your personal referral link"
+
+11 MONTHS AFTER LAST BOOKING
+→ Email + WhatsApp: "Planning your return to Greece? Book directly with us and skip the OTA fees — we remember you"
+```
+
+#### Component 3: The Operator Dashboard
+The GHL sub-account itself, white-labeled, becomes the operator's back-office:
+- See all bookings in one calendar view
+- Client database (name, nationality, WhatsApp, booking history, notes)
+- Conversation inbox (all WhatsApp/SMS/email threads unified)
+- Revenue report by service, by month
+- Review count tracker (Google + TripAdvisor)
+
+No training needed beyond a 30-minute onboarding call. The interface is visual and the automations run without the operator touching anything.
+
+---
+
+### 14.5 What You Do NOT Build (MVP Boundaries)
+
+Be explicit about what is out of scope for the first 6 months. Scope creep kills MVPs.
+
+| Feature | MVP Status | Reason |
+|---|---|---|
+| Payment processing (Stripe checkout) | ✅ Include | GHL has native Stripe integration |
+| Group size pricing (per person) | ✅ Include | GHL order forms support this |
+| Multi-language booking pages | ❌ Defer | English first — tourists are international |
+| Greek consumer discovery directory | ❌ Defer | Sell the tool first, build the marketplace later |
+| Native mobile app | ❌ Never | GHL mobile app exists already |
+| Accounting / invoicing | ❌ Defer | Out of scope — refer to Taxisnet / accountant |
+| Channel manager (sync with Viator availability) | ❌ Defer | Complex API work — not an MVP feature |
+| Dynamic pricing / yield management | ❌ Defer | Nice to have, not needed at 60 clients |
+
+---
+
+### 14.6 Technical Setup — Step by Step
+
+This is the exact sequence to go from zero to a live product.
+
+#### Step 1 — GHL Account (Day 1-2)
+1. Sign up for **GHL Agency Pro** at $497/mo (14-day free trial available)
+2. White-label settings: upload your logo, set your brand domain (e.g., `app.greecedirect.gr`)
+3. Connect your domain via DNS settings (GHL guides you through this)
+4. Connect **Stripe** for payment processing
+5. Connect **WhatsApp Business API** through GHL's LC Phone or Twilio integration
+
+**Critical:** Use GHL's built-in LC Phone for WhatsApp — it is cheaper and simpler than Twilio for a solo operator at MVP stage.
+
+#### Step 2 — Build the Master Snapshot (Day 3-7)
+Build one "template" sub-account with everything configured. Every new client gets a clone of this.
+
+```
+MASTER SNAPSHOT CHECKLIST:
+
+Calendars:
+  □ Service calendar (tour/transfer) with duration, buffer time, max capacity
+  □ Booking confirmation form (name, email, WhatsApp, group size, hotel)
+  □ Stripe payment step embedded in booking flow
+
+Pipelines:
+  □ Bookings pipeline: Inquiry → Confirmed → Pre-Tour → Completed → Reviewed
+  □ Re-engagement pipeline: Past Visitor → Contacted → Rebooked
+
+Automations (all in Greek + English dual-language):
+  □ Booking Confirmation (immediate)
+  □ 24hr Pre-Tour Reminder
+  □ 2hr Pre-Transfer Driver Info
+  □ Post-Tour Review Request (3hr after)
+  □ Transfer → Tour Upsell (same evening)
+  □ 30-day Referral Request
+  □ 11-month Re-engagement
+
+WhatsApp Bot:
+  □ Keyword: "book" / "κράτηση" → booking link
+  □ Keyword: "price" / "τιμή" → price list
+  □ Keyword: "where" / "πού" → meeting point + maps link
+  □ Keyword: "cancel" / "ακύρωση" → cancellation policy
+  □ Keyword: "hours" / "ώρες" → availability link
+
+Custom Fields (contact-level):
+  □ Nationality
+  □ Group size
+  □ Hotel name
+  □ Booking source (Viator / GYG / Direct / Referral)
+  □ Special requests
+  □ Total bookings (auto-incremented)
+
+Booking Page Template:
+  □ Hero image slot (operator replaces with their own)
+  □ Service description block
+  □ Availability calendar embed
+  □ FAQ section (what to bring, cancellation policy, meeting point)
+  □ Social proof block (pulls from Google reviews via embed)
+```
+
+**Time to build:** 15-20 hours total for the first snapshot. After that, cloning and customizing per client = 30 minutes.
+
+#### Step 3 — Your Sales Demo Environment (Day 7-10)
+Build one polished demo sub-account for a fictional Athens operator: *"Athens Highlights — Private Tours"*. This is what you show every prospect.
+
+The demo must:
+- Have real-looking tour listings (Acropolis tour, Athens food tour, airport transfer)
+- Show a live booking flow (let the prospect actually book a fake tour during the demo call)
+- Show the automated WhatsApp firing after booking
+- Show the dashboard with mock bookings and reviews
+
+Record a 3-minute Loom video of the demo. This video goes in every outreach message.
+
+#### Step 4 — Client Onboarding Process (30 minutes per client)
+When a new client signs up, your onboarding checklist:
+
+```
+□ Clone master snapshot → new sub-account
+□ Add operator's logo and brand colors (15 min)
+□ Set up their tour/transfer services in the calendar
+□ Add their Stripe account (they connect their own)
+□ Set their WhatsApp Business number (they provide)
+□ Customize meeting point, cancellation policy text
+□ Give them their booking page URL
+□ 30-min Zoom onboarding call: show them how to see bookings, reply to messages
+□ Send them the "Share your booking link" starter kit (Instagram bio tip, Google My Business tip, WhatsApp status tip)
+```
+
+---
+
+### 14.7 Business Setup — Legal and Financial From Scratch
+
+You are in Athens, starting from zero. Here is what you actually need.
+
+#### Legal Structure
+- **Register as a sole trader (ατομική επιχείρηση)** via the Unified Digital Portal (gov.gr) — takes 1-3 days, costs ~€0-50
+- **VAT registration** — required if annual revenue exceeds €10,000. Register proactively on AADE (myaade.gov.gr)
+- **KAD code to use:** 62.09.19 (other IT service activities) or 73.11 (advertising agencies) — consult a local accountant for the best fit
+- **Issue invoices** through an AADE-compliant system (e.g., TimologioCloud, MyData-connected invoicing software — ~€10/mo)
+
+**Do not delay legal setup.** In Greece, operating without registration creates retroactive tax problems. Registration takes 1 day and costs almost nothing.
+
+#### Banking
+- Open a **business bank account** — Piraeus Bank, Alpha Bank, or Eurobank all offer free business accounts for sole traders
+- Connect this account to **Stripe** for receiving client payments
+- Keep a simple spreadsheet of income/expenses until you can afford a bookkeeper (month 4+)
+
+#### Monthly Cost Structure
+
+| Item | Monthly Cost |
+|---|---|
+| GHL Agency Pro | €460 (~$497) |
+| Domain (.gr registration) | €1 (annual €15, amortized) |
+| WhatsApp Business API (LC Phone credits) | €30-80 depending on volume |
+| Stripe fees (2.9% + €0.30 per transaction) | Passed to client or absorbed |
+| Invoicing software (e.g., TimologioCloud) | €10 |
+| Loom Pro (demo videos) | €12 |
+| Canva Pro (graphics for outreach) | €13 |
+| **Total fixed overhead** | **~€530-580/mo** |
+
+**Break-even:** 4 clients at €149/mo = €596. You are profitable from client 4.
+
+---
+
+### 14.8 Pricing — Final Structure with Rationale
+
+#### Starter — €99/month
+*For: solo drivers, individual guides just starting out*
+- 1 booking type (e.g., only airport transfers OR only 1 tour type)
+- Booking confirmation + pre-arrival automation
+- Post-tour review request
+- Direct booking page
+- WhatsApp FAQ bot
+- Up to 200 WhatsApp messages/month included
+
+**Why €99:** Low enough to be an obvious yes for anyone with even 2-3 bookings/month. Onboards easily and upgrades as they grow.
+
+#### Pro — €149/month *(main product)*
+*For: operators with 2-5 tours or services, 1-3 guides/drivers*
+- Unlimited booking types
+- All Starter automations
+- Transfer → Tour upsell automation
+- 30-day referral request
+- Multi-service calendar
+- Up to 500 WhatsApp messages/month included
+
+**Why €149:** This is the sweet spot. Pays for itself with 1 direct booking (saving €30-40 in Viator commission). Easy ROI math.
+
+#### Agency — €249/month
+*For: companies with 3+ staff, multiple vehicles, boat tours*
+- Everything in Pro
+- Multi-staff assignment (bookings routed to specific guides/drivers)
+- Annual re-engagement campaign (the "coming back to Greece?" automation)
+- Client database with full history and notes
+- Monthly performance report (auto-generated)
+- Up to 2,000 WhatsApp messages/month included
+- Priority support (WhatsApp response within 2 hours)
+
+**Why €249:** A company doing 20+ bookings/month saves €1,000+ on Viator. €249 is nothing.
+
+#### Annual discount: 2 months free (pay 10, get 12)
+This locks in revenue, reduces churn, and is psychologically compelling during onboarding.
+
+---
+
+### 14.9 The Sales Process — From Cold Contact to Signed Client
+
+#### Where to Find Prospects
+
+**Source 1 — TripAdvisor Athens Experiences**
+Go to tripadvisor.com/Attractions-g189400-Activities-Athens. Filter by "Experiences." You see hundreds of operators with their website links, email, and sometimes WhatsApp.
+
+Target operators with:
+- 50-300 reviews (established enough to pay, not yet tech-savvy enough to have systems)
+- Last review within 30 days (actively operating)
+- No "Book on Viator" button on their own website (still dependent on OTAs)
+
+Avoid: operators with fewer than 20 reviews (not ready to pay), operators whose TripAdvisor profile links to a professional tour company website with existing booking software.
+
+**Source 2 — Google Maps**
+Search terms to use in Athens:
+- "Athens walking tour"
+- "Acropolis private tour"
+- "Athens airport transfer"
+- "Athens food tour"
+- "Athens day trip Delphi"
+- "Athens private driver"
+
+Open each result. Look for a website. If the website has no booking button, or their "book" button goes to Viator/GYG — that is your prospect.
+
+**Source 3 — Instagram**
+Search hashtags: `#athenstours` `#athensguide` `#athenstransfer` `#greecetours` `#acropolis tour`
+
+Tour operators post constantly on Instagram. Their bio says "DM to book" or links to Viator. That is the signal.
+
+**Source 4 — Facebook Groups**
+- `Tour Guides Greece` — several hundred members, active
+- `Athens Tourism Professionals`
+- `Private Transfer Drivers Athens`
+- `Ξεναγοί Αθήνας` (Athens Guides)
+
+Spend 1 week observing before posting. Learn the language of their complaints. Then post genuinely useful content before ever mentioning your product.
+
+---
+
+#### The Outreach Sequence (5-touch, 2-week process per prospect)
+
+**Touch 1 — Day 1: The Opening DM (Instagram or WhatsApp)**
+
+For tour operators (English):
+> Hi [Name], found you on TripAdvisor — your [Acropolis tour / food tour / transfer service] looks great.
+>
+> Quick question: are you still managing bookings manually / through Viator? I built a direct booking system specifically for small Athens operators — flat fee, no commission, takes 2 days to set up.
+>
+> With the season starting in [X] weeks, could save you thousands this summer. 3-minute demo video here: [Loom link]
+>
+> Worth a quick call?
+
+For transfer companies (Greek):
+> Γεια [Name], βρήκα την εταιρεία σου στο Google. Φτιάξαμε σύστημα απευθείας κρατήσεων για transfer companies στην Αθήνα — χωρίς ποσοστό σε κανέναν, €149 το μήνα.
+>
+> Αν κάνεις 10 transfers το μήνα στα €60, γλιτώνεις €150+ που θα πήγαιναν στο GetTransfer ή αλλού.
+>
+> Ξεκινάει η σεζόν σε λίγες εβδομάδες. Έχεις 5 λεπτά για μια γρήγορη κλήση;
+
+**Touch 2 — Day 3 (if no reply): The Value Add**
+Do not pitch again. Send something genuinely useful:
+> "Saw that you're running [Acropolis tours]. Here's a quick tip that doubled review rates for another Athens operator I work with: [one-sentence tip about post-tour review timing].
+>
+> Thought it might be useful for the season."
+
+**Touch 3 — Day 7: The Proof**
+> "Wanted to share a quick result — one of the Athens transfer operators I set up last week got 3 direct bookings in their first 5 days (bookings that would have gone to GetTransfer before). Happy to show you the setup on a 20-minute call — no obligation."
+
+**Touch 4 — Day 10: The Scarcity Frame**
+> "I'm doing free setup for the first 5 operators I work with this season — in exchange for a testimonial after 30 days. 2 spots left. Let me know if you want one."
+
+**Touch 5 — Day 14: The Graceful Exit**
+> "No worries if the timing isn't right — I'll follow up after the season. Good luck this summer and hope it's your best one yet."
+
+This sequence respects their time, never feels pushy, and the "free setup" offer in Touch 4 converts 20-30% of engaged prospects.
+
+---
+
+#### The Demo Call (20 minutes)
+
+Structure:
+1. **3 min — Their situation:** "Tell me about your current booking setup. How do bookings come in today?"
+2. **5 min — Identify the specific pain:** Let them say out loud how much they pay Viator, how chaotic WhatsApp is, how few reviews they get. Don't say it for them.
+3. **10 min — Live demo:** Share screen. Show the demo sub-account. Specifically:
+   - Walk through the booking page (let them "book" a fake tour live)
+   - Show the WhatsApp confirmation firing immediately on their phone
+   - Show the review request that fires 3 hours after a tour
+   - Open the dashboard — show bookings, client list, revenue chart
+4. **2 min — The close:** "Based on what you told me — you're doing about [X] bookings/month through Viator. At 25% commission that's [Y]€/month going to them. Our Pro plan is €149. The math is obvious. Want me to set this up for you this week?"
+
+**Never end a demo without asking for the next step explicitly.**
+
+---
+
+### 14.10 The No-Commission Viral Growth Engine
+
+Once you have 10-15 paying clients, activate the network effects that grow without you.
+
+#### Mechanic 1 — The Operator Referral Program
+Every operator gets a unique referral link. When they refer another operator who signs up:
+- Referrer gets 1 month free
+- New client gets first month at 50% off
+
+Tour operators in Athens know each other. They share resources, tips, and complaints about OTAs in the same Facebook groups. One evangelist in that network is worth 20 cold DMs.
+
+#### Mechanic 2 — The Tourist Flywheel
+Every booking made through your platform creates a tourist contact. That tourist has your platform's branding on their confirmation message. If the operator uses the link `greecedirect.gr/george-acropolis-tours`, every tourist who clicks it and books is exposed to your brand.
+
+Over time, tourists search "book Athens tours direct" and find your growing directory of operators. This is free inbound for your operators — and it sells your platform to new operators.
+
+#### Mechanic 3 — The Review Score Effect
+Your automated review requests generate 3-5x more Google/TripAdvisor reviews within 60 days.
+
+Higher reviews = higher ranking on Google Maps and TripAdvisor = more organic bookings for the operator = they earn more = they tell other operators = you get referrals.
+
+The product sells itself through results. Do good work with the first 10 clients and make their results publicly visible.
+
+#### Mechanic 4 — The Season Recap Report
+In November (end of tourism season), send every client a PDF report:
+- Total direct bookings this season
+- Estimated commission saved vs Viator
+- Reviews gained
+- Re-engagement emails sent
+
+This report is designed to be shared. Operators will post it in Facebook groups. "Look at what I saved this season by going direct." That post is free advertising worth more than any paid campaign.
+
+---
+
+### 14.11 Month-by-Month Execution Plan
+
+#### Month 1 — Foundation (€0 revenue, ~€580 costs)
+
+**Week 1:**
+- Day 1: Register sole trader on gov.gr. Takes 1 day.
+- Day 1: Sign up for GHL Agency Pro free trial.
+- Day 2-3: White-label GHL: your domain, your logo, your brand name.
+- Day 4-7: Build master snapshot (all automations, booking page template, pipelines).
+
+**Week 2:**
+- Build demo sub-account ("Athens Highlights — Private Tours").
+- Record 3-minute Loom demo video.
+- Build your landing page (use GHL funnel builder — no extra tool needed).
+- Register your domain (e.g., `greecedirect.gr` or `tourdirect.gr`).
+
+**Week 3:**
+- Begin outreach. Target: 10 DMs/day on Instagram + 5 emails/day to TripAdvisor operators.
+- Join 3 Facebook groups. Do not pitch. Observe and comment genuinely.
+- Goal by end of week 3: 5 demo calls booked.
+
+**Week 4:**
+- Run demo calls.
+- Offer free setup to first 3 operators (in exchange for testimonial).
+- Set up those 3 operators. Onboarding call per client.
+- Collect first testimonials (video if possible).
+
+**Month 1 target:** 3 free clients live, 1 paying client, €149 MRR.
+
+---
+
+#### Month 2 — Traction (€149-€745 MRR)
+
+- Free clients from Month 1 have now received real bookings. Call each one. Show them the data. Upgrade pitch.
+- Goal: convert all 3 free clients to paid = €447 MRR.
+- Continue outreach: 10 DMs/day = 70/week. Add email outreach to TripAdvisor operators.
+- Facebook groups: start posting value content (1 post/week). No pitching yet.
+- Target: 5 total paying clients by end of Month 2 = **€745 MRR**.
+- At €745 MRR your revenue is covering GHL cost. You are cash-flow neutral.
+
+---
+
+#### Month 3 — Season Launch (€1,490-€2,235 MRR)
+
+Tourism season starts in April. **This is your leverage point.**
+
+- Send a season-start message to every free and paid client: "Season is here — is your direct booking link live on your Instagram and Google My Business?"
+- Offer a "Season Starter" package: sign up now, first month free, annual pricing = 2 months free.
+- Activate the referral program.
+- Target: 10-15 paying clients by end of Month 3 = **€1,490-€2,235 MRR**.
+- Begin posting in Facebook groups with real results: "Athens transfer company saved €420 in OTA commissions in their first 30 days — here's how."
+
+---
+
+#### Month 4 — Scaling (€3,725-€4,470 MRR)
+
+- 25 paying clients target.
+- Hire a part-time assistant (€5-8/hr, student on oJobs.gr or WorkableStudents) to handle DM outreach while you focus on demos and onboarding.
+- Start collecting written + video testimonials. Add them to your landing page.
+- Reach out to associations: SETE (Greek Tourism Confederation), local Athens tour guide unions. Ask to present to their members.
+- Send season recap preview to existing clients: "You've had 47 direct bookings so far this season."
+
+---
+
+#### Month 5-6 — Consolidation (€5,960-€8,940 MRR)
+
+- 40-60 paying clients.
+- Start geographic expansion: Thessaloniki, Crete (Heraklion), Rhodes, Santorini operators.
+- Begin building the consumer-facing directory: `greecedirect.gr` becomes searchable by tourists. This creates inbound for your operators and reduces churn ("I can't leave — tourists find me here").
+- Introduce annual plans heavily: a client paying €149 × 12 = €1,788 annually. Offer €1,490 annual = 2 months free. Annual clients have near-zero churn.
+
+---
+
+### 14.12 Financial Projections
+
+| Month | Paying Clients | Avg MRR/Client | Gross MRR | Overhead | Net MRR |
+|---|---|---|---|---|---|
+| 1 | 1 | €149 | €149 | €580 | -€431 |
+| 2 | 5 | €149 | €745 | €580 | €165 |
+| 3 | 15 | €165 | €2,475 | €610 | €1,865 |
+| 4 | 25 | €170 | €4,250 | €630 | €3,620 |
+| 5 | 40 | €175 | €7,000 | €650 | €6,350 |
+| 6 | 60 | €179 | €10,740 | €700 | €10,040 |
+| 9 | 90 | €185 | €16,650 | €900 | €15,750 |
+| 12 | 120 | €190 | €22,800 | €1,100 | €21,700 |
+
+*Average MRR/client increases over time as clients upgrade from Starter to Pro/Agency.*
+*Overhead increases modestly to account for part-time assistant, higher SMS volume, and tooling.*
+
+**Annual recurring revenue at Month 12: ~€273,600**
+**Net profit at Month 12: ~€260,400/year — roughly €21,700/month**
+
+This assumes zero churn (realistic if you deliver results) and no capital investment beyond GHL.
+
+---
+
+### 14.13 Churn Prevention — How to Keep Every Client
+
+The biggest threat to this business is clients cancelling in the off-season (November-March). Prevent this with:
+
+**1. Annual pre-sell in September**
+In the last month of the high season, offer annual pricing at a discount: "Lock in next season now — 2 months free." Clients who pay annually don't cancel in January.
+
+**2. Off-season value delivery**
+During the off-season, the re-engagement automation is working — sending "coming back to Greece?" emails to past tourists. Show clients this is happening. Monthly report in November: "47 re-engagement messages sent to past visitors this month."
+
+**3. The Season Recap Report**
+November: auto-generate and send each client a PDF with their season stats. Commission saved. Reviews gained. Direct bookings made. This report justifies the entire year's subscription in one page. Make it shareable.
+
+**4. Off-season product development calls**
+In January, call each client and ask: "What's one thing that would make this even more useful next season?" You gather product feedback, you show you care, and you make them feel part of something. Clients don't cancel subscriptions they feel invested in.
+
+---
+
+### 14.14 Risks and Mitigations
+
+| Risk | Probability | Impact | Mitigation |
+|---|---|---|---|
+| GHL raises prices significantly | Low | Medium | Lock in annual plan; GHL has been stable on pricing; alternatives exist (HighLevel forks) |
+| Viator/GYG copies the direct booking tool | Low (they won't — commissions are their business) | Low | Irrelevant — you are the anti-OTA tool. Their existence is your pitch. |
+| Kleesto (existing Greek SaaS for tours) undercuts | Medium | Medium | Kleesto targets larger operators at €150-500/mo with no automation. Position on simplicity + automation |
+| Slow season means clients cancel | High (seasonal reality) | High | Solve with annual pricing. Every annual client = zero churn risk. Target 50% annual vs monthly by Month 6. |
+| WhatsApp API restrictions (Meta policy changes) | Low-Medium | High | Maintain SMS as backup channel. GHL supports both natively. |
+| Unable to find clients fast enough | Medium | Medium | Free setup offer + seasonal urgency message converts faster than standard SaaS sales |
+| Greek VAT and invoicing complexity | Medium | Low | Register correctly from day one. Use MyData-connected invoicing software. Consult accountant at Month 3. |
+
+---
+
+### 14.15 The One-Page Summary — What You Do This Week
+
+If this plan were reduced to 7 actions, this week:
+
+1. **Monday:** Sign up for GHL Agency Pro free trial. Start white-labeling.
+2. **Tuesday-Wednesday:** Build the master snapshot. Booking page + 3 key automations (confirmation, reminder, review request).
+3. **Thursday:** Build demo sub-account. Record 3-minute Loom video.
+4. **Friday:** Register domain. Put up a single-page landing page.
+5. **Saturday:** Go to TripAdvisor Athens Experiences. Build a spreadsheet of 50 operators with their contact details.
+6. **Sunday:** Join 3 Facebook groups. Do not post. Read and understand how they talk.
+7. **Next Monday:** Send first 10 outreach DMs with the Loom video link. The season is starting. Every day you wait is a week of their season they spend on Viator.
+
+You do not need investors. You do not need a developer. You do not need a co-founder. You need GHL, a domain, and the discipline to send 10 DMs a day.
+
+---
+
 ## Sources & Research References
 
 - [Skroutz 2025 Annual Report](https://corporate.skroutz.gr/en/press/skroutz-2025-annual-report-for-regional-greece/)
